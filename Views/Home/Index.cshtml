@@ -1,0 +1,66 @@
+﻿<style>
+    .my-2 {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .my-1 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .col-12 {
+        max-width: 40rem;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .result-line {
+        border-bottom: solid 1px black;
+        padding: 0 1rem 0.75rem 1rem;
+    }
+</style>
+
+<script>
+    const add = () => {
+        $('#result').val( Number($('#number1').val()) + Number($('#number2').val() ));
+    }
+    const subtract = () => {
+        $('#result').val( Number($('#number1').val()) - Number($('#number2').val() ));
+    }
+    const multiplication = () => {
+        $('#result').val( Number($('#number1').val()) * Number($('#number2').val() ));
+    }
+    const division = () => {
+        $('#result').val( Number($('#number1').val()) / Number($('#number2').val() ));
+    }
+</script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form runat="server" class="my-2">
+                <div class="form-group result-line">
+                    <h1>Calculator</h1>
+
+                    <input class="form-control" type="text" name="number1" id="number1">
+
+                    <div class="my-1 text-right">
+                        <input runat="server" onclick="add()" class="btn btn-secondary" type="button" value="+">
+                        <input runat="server" onclick="subtract()" class="btn btn-secondary" type="button" value="-">
+                        <input runat="server" onclick="multiplication()" class="btn btn-secondary" type="button" value="x">
+                        <input runat="server" onclick="division()" class="btn btn-secondary" type="button" value="÷">
+                    </div>
+
+                    <input class="form-control" type="text" name="number2" id="number2">
+                </div>
+
+                <div class="form-group form-check">
+                    <input class="form-control" type="text" name="result" id="result" value="" disabled>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
